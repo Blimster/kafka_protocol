@@ -1,0 +1,13 @@
+name: kafka_protocol_message_generator
+description: Generates messages of the Kafka protocol.
+version: 0.1.0
+homepage: https://github.com/blimster/kafka_protocol
+
+environment:
+  sdk: '>=2.16.2 <3.0.0'
+
+dependencies:
+  recase: ^4.0.0
+
+dev_dependencies:
+  lints: ^1.0.0

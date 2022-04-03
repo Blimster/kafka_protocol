@@ -1,14 +1,14 @@
 part of kafka_protocol;
 
-class _StreamReader {
+class StreamReader {
   final buffer = Queue<int>();
   final controller = StreamController<void>.broadcast();
 
-  _StreamReader(Stream<List<int>> stream) {
-    stream.listen(onData);
+  StreamReader(Stream<List<int>> stream) {
+    stream.listen(_onData);
   }
 
-  void onData(List<int> data) {
+  void _onData(List<int> data) {
     buffer.addAll(data);
     controller.add(null);
   }
@@ -33,7 +33,6 @@ class _StreamReader {
   }
 
   Future<int> takeOne() async {
-    final list = await takeCount(1);
-    return list[0];
+    return (await takeCount(1))[0];
   }
 }
