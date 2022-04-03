@@ -115,7 +115,3 @@ abstract class KafkaResponseV1 extends KafkaResponseV0 {
 
   KTagBuffer get headerTagBuffer => _headerTagBuffer;
 }
-
-class FooResponse extends KafkaResponseV1 {
-  FooResponse() : super._();
-}

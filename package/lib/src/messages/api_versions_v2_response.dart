@@ -1,3 +1,11 @@
 part of kafka_protocol;
 
-// TODO implement response
+class ApiVersionsResponseV2 extends KafkaResponseV1 {
+  ApiVersionsResponseV2() : super._();
+
+  @override
+  Future<StreamReader> _apply(StreamReader reader) async {
+    reader = await super._apply(reader);
+    return reader;
+  }
+}

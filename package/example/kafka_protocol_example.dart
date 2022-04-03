@@ -12,18 +12,9 @@ void main() async {
   final connection = await connectSocket('localhost');
   final client = KafkaClient(connection);
 
-  final response = await client.request(request, FooResponse());
+  final response = await client.request(request, ApiVersionsResponseV3());
   print(response.length);
   print(response.correlationId);
 
   await connection.close();
-
-  // print('connected');
-  // connection.outputSink.add(request.serialize());
-  // connection.inputStream.listen((event) async {
-  //   print(event.length);
-  //   print(event);
-  //   await connection.close();
-  //   print('disconnected');
-  // });
 }
